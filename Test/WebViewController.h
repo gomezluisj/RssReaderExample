@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  WebViewController.h
 //  Test
 //
 //  Created by Luis Gómez on 4/8/15.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
-
+@interface WebViewController : UIViewController <UIWebViewDelegate>
+@property (nonatomic) NSString *url;
 @end
-
