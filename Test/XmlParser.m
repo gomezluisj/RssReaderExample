@@ -13,10 +13,11 @@
 @implementation XmlParser
 
 -(void) getRssFromServer{
+    NSString *rssFeed=@"http://your-rss-feed.com";
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager setResponseSerializer:[AFXMLParserResponseSerializer new]];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/rss+xml"];
-    [manager GET:@"http://webassets.scea.com/pscomauth/groups/public/documents/webasset/rss/playstation/Games_PS3.rss" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager GET:rssFeed parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         [responseObject setDelegate:self];
         [responseObject parse];
 
